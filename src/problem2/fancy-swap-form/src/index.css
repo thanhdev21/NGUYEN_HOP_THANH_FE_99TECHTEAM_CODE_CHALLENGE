@@ -1,0 +1,292 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #383459;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.ant-btn-variant-solid {
+  background-color: #646cff;
+  color: #fff;
+  border: none;
+  height: 48px;
+  border-radius: 16px;
+  padding: 16px 24px;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+.smart-swap-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #27262c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 24px;
+}
+
+.smart-swap-form-input {
+  background-color: #372f47;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding: 0 16px;
+  border-radius: 24px;
+  &:focus-within {
+    box-shadow: 0 0 0 2px #646cff;
+  }
+}
+
+.label {
+  font-size: 0.8em;
+  color: #888;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.select-token-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+  height: 48px;
+  padding: 4px;
+  &:hover {
+    background-color: #191326;
+    border-radius: 16px;
+  }
+}
+
+.balance-text {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.ant-input-outlined {
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.ant-input-outlined:focus,
+.ant-input-outlined:focus-within {
+  box-shadow: none;
+}
+
+.token-image {
+  width: 32px;
+  height: 32px;
+}
+
+.divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #383241;
+}
+
+.swap-icon {
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2) rotate(180deg);
+    transition: transform 0.2s;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.confirm-swap-btn {
+  width: 100%;
+  margin-top: 16px;
+  font-size: 1.2em;
+}
+
+.ant-modal .ant-modal-content {
+  background-color: #27262c;
+  color: #fff;
+}
+
+.ant-modal .ant-modal-header {
+  background-color: #27262c;
+}
+.ant-modal .ant-modal-title {
+  color: #fff;
+}
+.ant-modal .ant-modal-close {
+  color: #fff;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.currency-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 400px;
+  overflow-y: auto;
+  margin-top: 16px;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #646cff;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #27262c;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #535bf2;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #535bf2;
+  }
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--colors-input);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--colors-textSubtle);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+.currency-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 16px;
+  cursor: pointer;
+  &:hover {
+    background-color: #191326;
+  }
+}
+
+.confirm-swap-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 16px;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.token-name {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex: 1;
+  gap: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.confirm-value {
+  flex: 1;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.confirm-swap-icon {
+  width: 40;
+  height: 40px;
+  z-index: 1;
+}
+
+.ant-modal .ant-modal-title {
+  font-size: 1.5em;
+  font-weight: 700;
+}
